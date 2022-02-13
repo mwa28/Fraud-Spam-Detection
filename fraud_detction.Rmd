@@ -75,6 +75,10 @@ ggplot(data, aes(x = factor(Class), y = Amount)) + geom_boxplot() +
   labs(x = 'Class', y = 'Amount') +
   ggtitle("Distribution of transaction amount by class") + theme_light()
 
+# correlation between variables
+
+correlations <- cor(data[,-1],method="pearson")
+  corrplot(correlations, number.cex = .9, method = "color", type = "full", tl.cex=0.8,tl.col = "black")
   
 # splitting the data
 ```{r}
